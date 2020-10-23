@@ -44,9 +44,8 @@ body {
 }
 
 #navigation-bar {
-  display: flex;
-  margin: 10px;
-  padding-left: 10%;
+  display: inline;
+  padding-right: 10%;
 }
 
 ul {
@@ -70,4 +69,10 @@ button {
 
 #flowersDiv {
   padding-left: 30%;
+}
+
+.username {
+  display: inline;
+  float:right;
+  padding-right:10px
 }
