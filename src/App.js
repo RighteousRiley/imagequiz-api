@@ -1,6 +1,7 @@
 import React from 'react';
 import Home from './components/Home';
 import Login from './components/Login';
+import Entry from './components/Entry';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -13,11 +14,20 @@ const App = function(props) {
       <div className="App">
         <Router>
         <Switch>
-          <Route path="/" render={props => <Home {...props}/>}>
+          <Route exact path="/" render={props => <Home {...props}/>}>
             
           </Route>
           <Route path="/login">
             <Login />
+          </Route>
+          <Route exact path="/flower-quiz" render={props => <Entry {...props}/>}>
+
+          </Route>
+          <Route exact path="/animal-quiz" render={props => <Entry {...props}/>}>
+          
+          </Route>
+          <Route exact path="/color-quiz" render={props => <Entry {...props}/>}>
+
           </Route>
         </Switch>
       </Router>

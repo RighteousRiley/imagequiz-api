@@ -41,6 +41,7 @@ body {
   background-color: #272822;
   color: #ff4500;
   margin:auto;
+  font-size: 1.4em;
 }
 
 #navigation-bar {
@@ -75,4 +76,24 @@ button {
   display: inline;
   float:right;
   padding-right:10px
+}
+
+img {
+  height: 100%;
+  width: 450px;
+  padding: 0;
+}
+
+.content {
+  display: flex;
+}
+
+.content, img {
+  padding:10%;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
 }
