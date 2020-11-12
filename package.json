@@ -1,5 +1,6 @@
 {
   "name": "mydictionary",
+  "homepage": "https://github.com/RighteousRiley/imagequiz",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -34,8 +35,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "gh-pages-deploy": "^0.5.1"
   }
 }
