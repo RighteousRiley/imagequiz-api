@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b03b839e.chunk.css",
+    "main.js": "/static/js/main.85607fdf.chunk.js",
+    "main.js.map": "/static/js/main.85607fdf.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5f740883.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5f740883.js.map",
+    "static/js/2.69dc7f32.chunk.js": "/static/js/2.69dc7f32.chunk.js",
+    "static/js/2.69dc7f32.chunk.js.map": "/static/js/2.69dc7f32.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.43b82cdcb8f6083905a2c440a0d78bf3.js": "/precache-manifest.43b82cdcb8f6083905a2c440a0d78bf3.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.b03b839e.chunk.css.map": "/static/css/main.b03b839e.chunk.css.map",
+    "static/js/2.69dc7f32.chunk.js.LICENSE.txt": "/static/js/2.69dc7f32.chunk.js.LICENSE.txt",
+    "static/media/animals.jpg": "/static/media/animals.746d7a76.jpg",
+    "static/media/colors.jpg": "/static/media/colors.c64ea3c7.jpg",
+    "static/media/flower.jpg": "/static/media/flower.511f2e86.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5f740883.js",
+    "static/js/2.69dc7f32.chunk.js",
+    "static/css/main.b03b839e.chunk.css",
+    "static/js/main.85607fdf.chunk.js"
+  ]
+}
