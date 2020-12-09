@@ -2,7 +2,7 @@ const express = require('express');
 var cors = require('cors');
 let data = require('./data');
 const app = express();
-const port = 3001;
+const port = process.env.port || 3002;
 
 // middlewars
 app.use(cors());
