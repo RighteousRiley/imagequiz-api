@@ -1,6 +1,6 @@
 {
-  "name": "mydictionary",
-  "homepage": "https://righteousriley.github.io/imagequiz/",
+  "name": "imagequiz-api",
+  "homepage": "https://righteousriley.github.io/imagequiz-api/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
