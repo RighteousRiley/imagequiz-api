@@ -7,7 +7,7 @@ import flower from '../images/flower.jpg';
 import colors from '../images/colors.jpg';
 import animals from '../images/animals.jpg';
 class Home extends React.Component {
-    constructor(props) {
+    constructor(props) { // comment
         super();
         this.state = {
             loggedIn: false,
