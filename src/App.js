@@ -12,7 +12,7 @@ import {
 const App = function(props) {
     return(
       <div className="App">
-        <Router>
+        <Router basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact path="/" render={props => <Home {...props}/>}>
             

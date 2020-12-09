@@ -16,6 +16,8 @@ class Home extends React.Component {
             entries : [],
             cursor: 0 // current index in list of quizzes 
         };
+        this.data = null;
+        this.api = null;
     }
 
     login = () => {
@@ -25,7 +27,7 @@ class Home extends React.Component {
     }
     
     directFlower = () => {
-        let from = {pathname:"/flower-quiz", state: {cursor:0, entries: this.state.entries, picture: "mydictionary/src/images/flower.jpg", prompt: "Which flower is this?"}};
+        let from = {pathname:"/flower-quiz", state: {cursor:0, entries: this.state.entries, picture: flower, prompt: "Which flower is this?"}};
         this.setState(
             {
                 from: from
@@ -34,7 +36,7 @@ class Home extends React.Component {
     }
     
     directAnimal = () => {
-        let from = {pathname:"/animal-quiz", state: {cursor:1, entries: this.state.entries, prompt:"Name this Animal"}};
+        let from = {pathname:"/animal-quiz", state: {cursor:1, entries: this.state.entries, picture: animals, prompt:"Name this Animal"}};
         this.setState(
             {
                 from: from
@@ -43,7 +45,7 @@ class Home extends React.Component {
     }
 
     directColor = () => {
-        let from = {pathname:"/color-quiz", state: {cursor:2, entries: this.state.entries, prompt: "Name this color"}};
+        let from = {pathname:"/color-quiz", state: {cursor:2, entries: this.state.entries, picture: colors, prompt: "Name this color"}};
         this.setState(
             {
                 from: from
@@ -54,9 +56,10 @@ class Home extends React.Component {
     body = () => {
         return(
             <div className="content">
-                {this.state.entries.length > 0 ? <Link ><p>{this.state.entries[this.state.cursor].name.toUpperCase()} </p><img src={flower} alt="Flower Quiz" onClick={this.directFlower} to="/flower-quiz"/></Link> : "NO ENTRIES FETCHED"}
-                {this.state.entries.length > 0 ? <Link to="/animal-quiz"><p>{this.state.entries[this.state.cursor+1].name.toUpperCase()} </p><img src={animals} alt="Flower Quiz" /></Link> : "NO ENTRIES FETCHED"}
-                {this.state.entries.length > 0 ? <Link to="/color-quiz"><p>{this.state.entries[this.state.cursor+2].name.toUpperCase()} </p><img src={colors} alt="Flower Quiz" /></Link> : "NO ENTRIES FETCHED"}
+                {this.state.entries.length > 0 ? <Link ><p>{this.state.entries[this.state.cursor].name.toUpperCase()} </p><img src={flower} alt="Flower Quiz" onClick={this.directFlower} to="/flower-quiz" /></Link> : "NO ENTRIES FETCHED"}
+                {this.state.entries.length > 0 ? <Link to="/animal-quiz"><p>{this.state.entries[this.state.cursor+1].name.toUpperCase()} </p><img src={animals} alt="Animal Quiz" onClick={this.directAniaml} /></Link> : "NO ENTRIES FETCHED"}
+                {this.state.entries.length > 0 ? <Link to="/color-quiz"><p>{this.state.entries[this.state.cursor+2].name.toUpperCase()} </p><img src={colors} alt="Color Quiz" onClick={this.directColor} /></Link> : "NO ENTRIES FETCHED"}
+                
             </div>
         )
     }
@@ -103,11 +106,17 @@ class Home extends React.Component {
                 <body className='body'>
                     {this.state.username.length > 0 ? <div className="content">
                 {this.state.entries.length > 0 ? <div><p>{this.state.entries[this.state.cursor].name.toUpperCase()}</p><img src={flower} alt="Flower Quiz" onClick={this.directFlower} /></div> : "NO ENTRIES FETCHED"}
-                {this.state.entries.length > 0 ? <div><p>{this.state.entries[this.state.cursor+1].name.toUpperCase()} </p><img src={animals} alt="Flower Quiz" onClick={this.directAnimal}/></div> : "NO ENTRIES FETCHED"}
-                {this.state.entries.length > 0 ? <div><p>{this.state.entries[this.state.cursor+2].name.toUpperCase()} </p><img src={colors} alt="Flower Quiz" onClick={this.directColor}/></div> : "NO ENTRIES FETCHED"}
+                {this.state.entries.length > 0 ? <div><p>{this.state.entries[this.state.cursor+1].name.toUpperCase()} </p><img src={animals} alt="Animal Quiz" onClick={this.directAnimal}/></div> : "NO ENTRIES FETCHED"}
+                {this.state.entries.length > 0 ? <div><p>{this.state.entries[this.state.cursor+2].name.toUpperCase()} </p><img src={colors} alt="Color Quiz" onClick={this.directColor}/></div> : "NO ENTRIES FETCHED"}
             </div> : "NOT AUTHENTICATED"}
                 </body>
-                
+                {fetch(this.api, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(this.data)
+                }).then(x => x.json()).then(y => console.log(y)).catch(e => console.log(e))};
             </div>
         
         )
